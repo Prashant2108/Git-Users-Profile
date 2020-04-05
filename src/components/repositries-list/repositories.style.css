@@ -1,0 +1,12 @@
+li{
+    text-align: left;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin: 0.5rem;
+}
+.Repositories span{
+    border: 1px solid black;
+}

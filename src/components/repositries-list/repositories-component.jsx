@@ -8,11 +8,7 @@ class Repositories extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.login}/repos`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_ACCESS_TOKEN}`,
-      },
-    })
+    fetch(`https://api.github.com/users/${this.props.login}/repos`)
       .then((response) => response.json())
       .then((repos) =>
         this.setState({ repos: repos }, console.log(this.props.login))

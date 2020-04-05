@@ -6,11 +6,7 @@ class Followers extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.login}/followers`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_ACCESS_TOKEN}`,
-      },
-    })
+    fetch(`https://api.github.com/users/${this.props.login}/followers`)
       .then((response) => response.json())
       .then((followers) =>
         this.setState({ followers: followers }, console.log(followers))

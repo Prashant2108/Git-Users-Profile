@@ -17,19 +17,11 @@ class App extends Component {
 
   componentDidMount(user = "") {
     if (!user) {
-      fetch(`https://api.github.com/users`, {
-        headers: {
-          Authorization: `token ${process.env.REACT_APP_ACCESS_TOKEN}`,
-        },
-      })
+      fetch(`https://api.github.com/users`)
         .then((response) => response.json())
         .then((users) => this.setState({ gitUsers: users }));
     } else {
-      fetch(`https://api.github.com/users/${user}`, {
-        headers: {
-          Authorization: `token ${process.env.REACT_APP_ACCESS_TOKEN}`,
-        },
-      })
+      fetch(`https://api.github.com/users/${user}`)
         .then((response) => response.json())
         .then((users) => this.setState({ gitUsers: [users] }));
     }
